@@ -30,7 +30,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 100px 0; 
+    margin: 70px 0; 
 }
 
 .container {
@@ -105,8 +105,8 @@ input[type="text"] {
 input[type="text"]::placeholder {
   /* opacity: 0.75; */
   color: gray;
-  font-family: "Montserrat";
-  font-size: 20px;
+  /* font-family: "Montserrat"; */
+  font-size: 23px;
 }
 
 /* input[id="img"]::placeholder {
