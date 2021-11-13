@@ -18,9 +18,10 @@ html{
     font-size: 10px;
 }
 
+/* changing background of frontend to test codepipeline  */
 body{
-    /* background-color: #DBE2E9;  */
-    background-image: url(images/bg2.jpg);
+    background-color: #DBE2E9; 
+    /* background-image: url(images/bg2.jpg); */
     
 }
 
