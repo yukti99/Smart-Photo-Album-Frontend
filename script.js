@@ -25,7 +25,7 @@ function uploadPhotos(){
     if (image){
         console.log("got image");
         var text = "It's alright! We'll label your photo after Uploading..";
-        var customLabel = prompt("Do you want to add a custom label to your photo?", "Label");
+        var customLabel = prompt("Do you want to add a custom label to your photo?", "$");
         if (customLabel){
             text = "Uploading Successful!";
             // OBTAINED CUSTOM LABEL OF PHOTO HERE  
@@ -35,7 +35,6 @@ function uploadPhotos(){
         console.log(image.type);
         event.preventDefault();
         var encoded = getBase64(image).then(data => {var img_base64 = data
-        console.log("hereeeeeeeeeeeeeeeeeeE");
         console.log(img_base64);
         var params = {"object" : image.name, "bucket" : "yuktib2", "Content-Type" : image.type + ";base64",'x-amz-meta-customLabels':customLabel};
         console.log(params);
@@ -44,6 +43,8 @@ function uploadPhotos(){
         sdk.uploadBucketObjectPut(params, img_base64 , {}).then((response)=>{
             console.log("Response:");
             console.log(response);
+            console.log("Custom label sent - ");
+            console.log(customLabel);
             
         })
     });
@@ -104,16 +105,24 @@ function searchPhotos(){
             var photos = response.data.results;
             // console.log(photos)
             if (photos.length == 0){
-                //document.getElementById("convo").innerHTML = "No Photos found!!";
+                document.getElementById("convo").innerHTML = "No Photos found ";
                 event.preventDefault();
             }else{
+                console.log("no of pics:")
+                console.log(photos.length);
+                var num_pics = photos.length;
+                document.getElementById("convo").innerHTML = num_pics+ " Photos found ";
                 for(var i in photos){
+                    console.log(photos[i]['labels']);
                     var label_desp = photos[i]['labels'].join();
+                    console.log(label_desp);
                     console.log("COUNT = ")                 
                     console.log(i)
                     var div = document.createElement('div');
                     div.className = 'item'
-                    // div.style.width = '50%'
+                    if (num_pics==1){
+                        div.style.width = '50%'
+                    }
                     div.id = 'div_id'+i.toString()
 
                     let image_element = document.createElement('img');
@@ -132,7 +141,8 @@ function searchPhotos(){
                     document.getElementById(div.id).appendChild(category_element)
 
                 }
-                document.getElementById('search-bar').value  = '';                   
+                document.getElementById('search-bar').value  = ''; 
+                document.getElementById('convo').value  = '';                   
                    
             }    
         });    

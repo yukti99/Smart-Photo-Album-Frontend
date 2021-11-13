@@ -180,6 +180,7 @@ form ion-icon {
     overflow: hidden;
     border-radius: 8px;
     transition: 0.3s ease box-shadow;
+    object-fit:scale-down;
 }
 
 .item:hover {
@@ -192,13 +193,14 @@ form ion-icon {
 }
 .item h3 {
     width: 100%;
-    padding: 20px;
+    padding: 20px;  
     position: absolute;
     background-color: #00000040;
     color: aliceblue;
     bottom: -70px;
     font-weight: 300;
     transition: 0.5s ease-in-out bottom;
+   
 }
 
 .item:hover h3 {
