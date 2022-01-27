@@ -6,6 +6,9 @@ A photo album web application that can be searched using natural language throug
 3. It has been made using Lex, Rekognition, API Gateway & OpenSearch to design an intelligent search layer that queries photos based on labels.
 4. It utilizes AWS services like AWS CodePipeline & CloudFormation for automating release pipelines and rapid and reliable delivery of features and updates
 
+### Architecture
+![](images/architecture.PNG)
+
 ### Step-1 : Launch an ElasticSearch instance
 ```
 a. Using AWS ElasticSearch service , create a new domain called “photos”.  
