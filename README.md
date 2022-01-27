@@ -2,9 +2,9 @@
 
 A photo album web application that can be searched using natural language through both text and voice with the following features:
 1. A scalable photo gallery web app on AWS for uploading & searching millions of photos through both text & voice.
-2. IProvides users a responsive front-end UI-design leveraging JavaScript, HTML/CSS, hosted on AWS S3 bucket
-3. It has been made using Lex, Rekognition, API Gateway & OpenSearch to design an intelligent search layer that queries photos based on labels.
-4. It utilizes AWS services like AWS CodePipeline & CloudFormation for automating release pipelines and rapid and reliable delivery of features and updates
+2. It provides users a responsive front-end UI-design leveraging JavaScript, HTML/CSS, hosted on AWS S3 bucket.
+3. An intelligent search layer that queries photos based on labels has been made using Lex, Rekognition, API Gateway & OpenSearch.
+4. It utilizes AWS services like AWS CodePipeline & CloudFormation for automating release pipelines and rapid and reliable delivery of features and updates.
 
 ### Architecture
 ![](images/architecture.PNG)
